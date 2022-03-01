@@ -1,0 +1,32 @@
+.containerMain{
+    background-color:#0096c7;
+    height: 90vh;
+    justify-content: center;
+}
+.Rows{
+    background-color: #0096c7;
+    height: 100%;
+    .column{
+        padding: 1em 1em ;
+        background-color: #0096c7;
+        border: 1px solid transparent;
+    }
+    .column2{
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+
+        #thumbnailImage{
+            height: 5em;
+        }
+        .LinkItems{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #023e8a;
+            font-size: all;
+
+        }
+    }
+}

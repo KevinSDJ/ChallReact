@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import { lazy,Suspense } from 'react';
+import SingIn from './pages/SingInPage';
+import Header from './components/Header/Header';
+import Main from './components/main/main';
 
+const SingInForm= lazy(()=>import('./components/form/form'))
+const Home= lazy(()=>import('./pages/Home'))
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path='singIn' element={
+        <Suspense fallback={<div>Loading..........</div>} >
+          <SingInForm/>
+        </Suspense>} />
+        <Route  path='/' element={
+          <Suspense fallback={<div>Loading............</div>} >
+            <Home/>
+          </Suspense>
+        } >
+          <Route path='/' element={<Main/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

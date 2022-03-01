@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import {StoreGlobal} from './contextGlobal/context'
 ReactDOM.render(
   <React.StrictMode>
+  <StoreGlobal>
     <App />
+  </StoreGlobal>
   </React.StrictMode>,
   document.getElementById('root')
 );
