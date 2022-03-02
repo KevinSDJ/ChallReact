@@ -1,14 +1,16 @@
 .containerMain{
-    background-color:#0096c7;
-    height: 90vh;
+    background-color:gray;
+    height: 95vh;
     justify-content: center;
+    gap:1em 0;
+
 }
 .Rows{
     background-color: #0096c7;
     height: 100%;
     .column{
         padding: 1em 1em ;
-        background-color: #0096c7;
+        background-color: white;
         border: 1px solid transparent;
     }
     .column2{
@@ -25,8 +27,9 @@
             justify-content: space-between;
             align-items: center;
             color: #023e8a;
-            font-size: all;
-
+            font-size: 1em;
+            color: gray;
+            font-size: 1.2em;
         }
     }
 }

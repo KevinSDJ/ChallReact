@@ -3,7 +3,8 @@ export let initialtate={
     recipeDetail:{},
     searchs:'',
     login:false,
-    errors:''
+    errors:'',
+    filterActive:false
 }
 
 
@@ -29,7 +30,9 @@ export const reducer=(state,action)=>{
         case 'addToMenu':
             return {...state,recipes:state.recipes.concat(action.payload)}
         case 'clearSearchs':
-            return {...state,searchs:''}
+            return {...state,searchs:'',filterActive:false}
+        case 'searchByfilter':
+            return {...state,searchs:action.payload,filterActive:true}
         default:
             return state
     }

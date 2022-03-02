@@ -9,6 +9,7 @@ import {getRecipeDetail,delRecipe,addTomenu} from '../../contextGlobal/actions'
 import { BsTrash,BsPlusCircleFill} from "react-icons/bs";
 import FiltersConteiner from './../customsearch/filtersContainer.js'
 import swal from 'sweetalert';
+import Footer from './../footer/footer'
 
 export default function Main() {
     const [opendetails, setOpenDet] = useState(false)
@@ -90,6 +91,7 @@ export default function Main() {
                 </ListGroup>
             </Col>
         </Row>
+        <Footer/>
     </Container>)
     }else{
         return (<Container className='containerMain' fluid>
@@ -108,6 +110,7 @@ export default function Main() {
                 </ListGroup>
             </Col>
         </Row>
+        <Footer/>
     </Container>)
     }
 }

@@ -2,6 +2,7 @@ import React,{useEffect,useContext} from 'react';
 import {Outlet,useNavigate} from 'react-router-dom'
 import {GlobalContext} from '../contextGlobal/context'
 import {checkSession,getRecipes} from '../contextGlobal/actions'
+import Header from '../components/Header/Header.jsx'
 
 
 
@@ -22,6 +23,7 @@ export default function Home(){
         getRecipes(dispatch)
     },[])
     return(<>
+        <Header/>
         <Outlet/>
     </>)
 } 

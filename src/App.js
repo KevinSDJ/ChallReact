@@ -10,7 +10,6 @@ const Home= lazy(()=>import('./pages/Home'))
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
       <Routes>
         <Route path='singIn' element={
         <Suspense fallback={<div>Loading..........</div>} >

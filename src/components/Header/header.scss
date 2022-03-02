@@ -1,14 +1,33 @@
-#NavbarNormal{
+.Navbarheader{
 	background-color:#03045e;
 	color: white;
-	#NavContainer{
+	.ContainerHeader{
 		background-color:#03045e;
 		color: white;
+		.LinksNav{
+			color: white;
+		}
 	}
-	#NavBrand{
+	.NavBrand{
 		color: lightgray;
 	}
+}
+.navbar-toggler{
+	background-color:#fcfbfb8f;
+}
+#offCanvaheader{
+	background-color:#03045e;
+	#offcanvasNavbarLabel{
+		color: white;
+	}
+	.btn-close{
+		background-color:white;
+	}
+}
+#offCanvabody{
+	background-color:#03045e;
 	.LinksNav{
-	color: white;
+		color: white;
+	}
 }
-}
+

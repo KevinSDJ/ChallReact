@@ -11,6 +11,7 @@ const DELETERECIPE="removeRecipe"
 const SEARCHRECIPE='searchrecipe';
 const ADDTOMENU ='addToMenu'
 const CLEARSEARCH='clearSearchs'
+const SEARCHBYFILTER="searchByfilter"
 
 
 
@@ -32,7 +33,7 @@ const checkSession=(dispatch)=>{
 }
 const getRecipes=(dispatch)=>{
     console.log(env.REACT_API_KEY)
-    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apikey=${env.REACT_API_KEY}&number=100`)
+    axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${env.REACT_API_KEY}&number=100`)
     .then(success=>{
         dispatch({type:SETALLRECIPES,payload:success.data.results})
     },err=>{
@@ -80,6 +81,23 @@ const addTomenu=(id,dispatch)=>{
 const clearSearchs=(dispatch)=>{
     dispatch({type:CLEARSEARCH})
 }
+const searchByFilter=(filtres,dispatch)=>{
+    let {type}=filtres
+    let {params}=filtres
+    if(type==="diet"){
+        console.log(filtres)
+        let url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${env.REACT_API_KEY}`
+         params.forEach(el=>{
+            url+= `&diet=${el}`
+         })
+         url+="&number=100"
+        axios.get(url)
+        .then(res=>{
+            console.log(res)
+            dispatch({type:SEARCHBYFILTER,payload:res.data.results})
+        })
+    }
+}
 export {
     setUser,
     logout,
@@ -90,5 +108,6 @@ export {
     delRecipe,
     searchRecipe,
     addTomenu,
-    clearSearchs
+    clearSearchs,
+    searchByFilter
 }

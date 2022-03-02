@@ -3,8 +3,9 @@ import {Form,FormControl,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {GlobalContext} from '../../contextGlobal/context' 
 import {searchRecipe,clearSearchs,clearError} from '../../contextGlobal/actions'
-import {BsXCircle} from "react-icons/bs";
+import {BsXCircle,BsSearch} from "react-icons/bs";
 import swal from 'sweetalert';
+import './searchbar.scss';
 
 
 
@@ -39,7 +40,7 @@ export default function Searchbar(){
 			return{...prev,[e.target.name]:e.target.value}
 		})
 	}
-	return(<Form className="d-flex" onSubmit={handleSubmit} >
+	return(<Form className="d-flex searchForm" onSubmit={handleSubmit} >
 		        {searchs?<Button className="d-flex flex-row align-items-center" variant="outline-danger" onClick={(e)=>clearSearchs(dispatch)}><BsXCircle/>search</Button>:null}
             <FormControl
               id="search"
@@ -50,6 +51,6 @@ export default function Searchbar(){
               name='search'
               onChange={handleChange}
             />
-            <Button type='submit'variant="outline-success">Search</Button>
+            <Button id="btnSearch" type='submit'variant="outline-success"><BsSearch/></Button>
           </Form>)
 }
