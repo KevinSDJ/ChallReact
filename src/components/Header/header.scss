@@ -1,6 +1,10 @@
 .Navbarheader{
 	background-color:#03045e;
 	color: white;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
 	.ContainerHeader{
 		background-color:#03045e;
 		color: white;

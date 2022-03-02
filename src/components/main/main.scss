@@ -3,6 +3,8 @@
     height: 95vh;
     justify-content: center;
     gap:1em 0;
+    margin-top: 5em;
+    position:relative;
 
 }
 .Rows{
@@ -17,7 +19,9 @@
         overflow: scroll;
         overflow-x: hidden;
         overflow-y: auto;
+        scroll-behavior: smooth;
         height: 100%;
+        z-index: 0;
 
         #thumbnailImage{
             height: 5em;
