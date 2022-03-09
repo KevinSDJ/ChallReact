@@ -80,7 +80,7 @@ export default function CardItem ({on,close}){
                   <Accordion.Item eventKey="0">
                      <Accordion.Header>Instructions</Accordion.Header>
                      <Accordion.Body>
-                       {recipeDetail.instructions}
+                       {recipeDetail? recipeDetail.instructions:null}
                     </Accordion.Body>
                   </Accordion.Item>
                </Accordion>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col,ButtonGroup,Button} from 'react-bootstrap';
+import { BsLinkedin,BsGithub,BsTwitter} from "react-icons/bs";
 import './footer.scss';
 
 
@@ -13,9 +14,9 @@ export default function Footer(){
     <Container id="footerContainer" fluid>
   <Row className="flexFirstRow">
     <Col><ButtonGroup id="buttonGroupFooter" aria-label="Basic example">
-  <Button variant="secondary">Left</Button>
-  <Button variant="secondary">Middle</Button>
-  <Button variant="secondary">Right</Button>
+  <Button variant="secondary" style={{borderRadius:"4em"}}><BsGithub/></Button>
+  <Button variant="secondary" style={{borderRadius:"4em"}} ><BsLinkedin/></Button>
+  <Button variant="secondary" style={{borderRadius:"4em"}} ><BsTwitter/></Button>
 </ButtonGroup></Col>
   </Row>
   <Row className="justify-content-md-center">
