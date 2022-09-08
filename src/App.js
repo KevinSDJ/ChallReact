@@ -1,8 +1,6 @@
 import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import { lazy,Suspense } from 'react';
-import SingIn from './pages/SingInPage';
-import Header from './components/Header/Header';
 import Main from './components/main/main';
 
 const SingInForm= lazy(()=>import('./components/form/form'))

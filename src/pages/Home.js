@@ -17,11 +17,11 @@ export default function Home(){
         if(!login&&localStorage.getItem('sessionRecipe')){
             checkSession(dispatch)
         }
-    },[nagivate])
+    },[dispatch, login, nagivate])
 
     useEffect(()=>{
         getRecipes(dispatch)
-    },[])
+    },[dispatch])
     return(<>
         <Header/>
         <Outlet/>

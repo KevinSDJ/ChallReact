@@ -121,7 +121,7 @@ import swal from 'sweetalert';
                 </Alert>:null}
                 </FloatingLabel>
             </Form.Group>
-            {login?<Button type='submit'  disabled>Singup</Button>:<Button variant="primary" type='submit'>Singup</Button>}
+            <Button variant="primary" type='submit'>SingIn</Button>
        </Form>
        </div>
         )

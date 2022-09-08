@@ -19,7 +19,7 @@ const [diets,setDiets]=useState({
 	Primal:false
 })
 const [listDiet,setListDiets]=useState([])
-let {state,dispatch}=useContext(GlobalContext)
+let {dispatch}=useContext(GlobalContext)
 
 useEffect(()=>{
 	let hasFilter=false
@@ -31,7 +31,7 @@ useEffect(()=>{
 	if(hasFilter&&listDiet.length>0){
 	searchByFilter({type:"diet",params:listDiet},dispatch)	
 	}
-},[diets])
+},[diets, dispatch, listDiet])
 
 function handleChange(e){
 	    !listDiet.includes(e.target.name.split(' ')[1])&&setListDiets(current=> current.concat(e.target.name.split(' ')[1]))

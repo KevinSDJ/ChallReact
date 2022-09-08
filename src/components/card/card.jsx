@@ -24,14 +24,8 @@ export default function CardItem ({on,close}){
                 setLoading(false)
             },(1000))
         }
-    },[])
-    const handleShow = () =>{
-        if(close){
-            close(true)
-        }else{
-            setShow(true)
-        }
-    }
+    },[loading])
+    
     if(loading){
         return(<>
             <Modal
